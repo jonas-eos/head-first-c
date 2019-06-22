@@ -1,5 +1,5 @@
 /*
- * Program to evaluate face values.
+ * Program to ecardValueuate face cardValueues.
  * Released under the Vegas Public License.
  * (c)2014 The College Blackjack Team.
  */
@@ -7,21 +7,21 @@
 #include <stdlib.h>
 
 int main() {
-  char card_name[3];
-  int val = 0;
+  char cardName[3];
+  int cardValue = 0;
   int count = 0;
   do {
-    puts("Enter the card_name: ");
-    scanf("%2s", card_name);
-    switch (card_name[0]) {
+    puts("Enter the card name: ");
+    scanf("%2s", cardName);
+    switch (cardName[0]) {
     case 'K':
     case 'Q':
     case 'J': {
-      val = 10;
+      cardValue = 10;
       break;
     } // Case K, Q and J
     case 'A': {
-      val = 11;
+      cardValue = 11;
       break;
     } // Case A
     case 'X': {
@@ -32,25 +32,25 @@ int main() {
        */
       continue;
     } // Case X
-    default: { val = atoi(card_name); }
+    default: { cardValue = atoi(cardName); }
 
       /*
-       * If card number is invalid, like 0 or less and 10 or high
+       * If card number is incardValueid, like 0 or less and 10 or high
        * On this case, program will jump to next do...while loop
        */
-      if ((val < 1) || (val > 10)) {
-        puts("I don't understand that value!");
+      if ((cardValue < 1) || (cardValue > 10)) {
+        puts("I don't understand that cardValueue!");
         continue;
-      } // if val < 1 and > 10
-    }   // case isn't J, Q, K, A and X value
+      } // if cardValue < 1 and > 10
+    }   // case isn't J, Q, K, A and X cardValueue
 
-    /* Check if the value is 3 to 6 */
-    if ((val >= 3) && (val <= 6)) {
+    /* Check if the cardValueue is 3 to 6 */
+    if ((cardValue >= 3) && (cardValue <= 6)) {
       count++;
-    } else if (val == 10) { // Otherwise check if the card was 10, J, Q or K
+    } else if (cardValue == 10) {
       count--;
-    }
+    } // Otherwise check if the card was 10, J, Q or K
     printf("Current count: %i\n", count);
-  } while (card_name[0] != 'X');
+  } while (cardName[0] != 'X');
   return 0;
 }
